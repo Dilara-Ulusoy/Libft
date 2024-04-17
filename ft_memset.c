@@ -37,4 +37,8 @@ int main()
    printf("String after memset =  %s\n",str);
    return 0;
 }
+//The reason for casting b to unsigned char* is to ensure that each byte in the memory block pointed to by b can be treated as an individual byte, 
+rather than a larger data type (e.g., int, char, etc.). This allows the function to correctly set each byte in the memory block to the value of c.
+//Similarly, the reason for casting c to unsigned char is to ensure that c is interpreted as an 8-bit unsigned integer, regardless of its original type. 
+This ensures that the value of c can be used directly to fill each byte in the memory block, without any loss of precision or unexpected behavior.
  */
