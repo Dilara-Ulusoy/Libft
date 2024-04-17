@@ -31,7 +31,7 @@ void	ft_bzero(void *s, size_t n)
 int main()
 {
    char x[] = "Hello";
-   printf("First String: %s\n", x);
+   printf("Before ft_bzero: %s\n", x);
    ft_bzero(x, 5);
    bzero(x, 5);
    printf("After ft_bzero: %s\n", x); // Print x after erasing first 5 bytes
