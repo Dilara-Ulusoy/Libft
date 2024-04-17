@@ -7,8 +7,8 @@ void ft_putendl_fd(char *s, int fd)
 }
 
 int main() {
-    char *message = "Hello, world!\n";
+    char *text = "Hello, world!\n";
     int fd = 1;
-    ft_putendl_fd(message, fd);
+    ft_putendl_fd(text, fd);
     return 0;
 }
