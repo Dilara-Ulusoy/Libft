@@ -34,14 +34,14 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 int main()
 {
    //Test case for ft_memcpy
-    char x[40];
+    char x[40] = {0};
    char y[] = "Hello Wolrd!";
    printf("Destination = %s\n", x);
    ft_memcpy(x, y, 5);
    printf("Destination after ft_memcpy =  %s\n\n",x);
     
     //Test case for memcpy
-    char a[40];
+    char a[40] = {0};
     char b[] = "Hello Wolrd!";
     printf("Destination = %s\n", a);
     memcpy(a, b, 5);
