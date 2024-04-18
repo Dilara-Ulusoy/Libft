@@ -26,19 +26,17 @@ void *ft_memmove(void *dst, const void *src, size_t len) {
 }
 
 int main() {
-    char dest1[] = "oldstring";
-    const char src1[]  = "newstring";
+    char dest[] = "Hello World!";
 
-    printf("Before ft_memmove dest = %s, src = %s\n", dest1, src1);
-    ft_memmove(dest1, src1, 9);
-    printf("After ft_memmove dest = %s, src = %s\n\n", dest1, src1);
+    printf("Before ft_memmove string: %s\n", dest);
+    ft_memmove(dest, dest+2 , 9);
+    printf("After ft_memmove string: %s\n\n", dest);;
     
-    char dest2[] = "oldstring";
-    const char src2[]  = "newstring";
+    char dest1[] = "Hello World!";
     
-    printf("Before memmove dest = %s, src = %s\n", dest2, src2);
-    memmove(dest2, src2, 9);
-    printf("After memmove dest = %s, src = %s\n\n", dest2, src2);
+    printf("Before library memmove string: %s\n", dest1);
+    memmove(dest1, dest1+2 , 9);
+    printf("After library memmove string: %s\n\n", dest1);;
 
     return 0;
 }
