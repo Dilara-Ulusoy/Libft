@@ -9,11 +9,12 @@
 /*   Updated: 2024/02/25 13:33:04 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, char *s2, size_t n)
 {
-	unsigned int	i;
-	unsigned int	diff;
+	size_t	i;
+	size_t	diff;
 
 	i = 0;
 	while (i < n)
@@ -25,12 +26,18 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-/*
+#include <stdio.h>
+#include <string.h>
+
  int main()
  {
      char x[]= "Hello";
      char y[]= "Apple";
-     printf("%d",ft_strcmp(x,y));
+     printf("My function: %d\n",ft_strncmp(x,y, 5));
+     
+    char a[]= "Hello";
+     char b[]= "Apple";
+     printf("Library function: %d",strncmp(a,b, 5));
      
  }
  */
