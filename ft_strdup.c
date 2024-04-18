@@ -42,12 +42,17 @@ char	*ft_strdup(const char *s)
 	return (copy);
 }
 /*
+#include <string.h>
 #include <stdio.h>
 int main (void)
 {
     char *str;
     char *str2;
+    char *str3;
     str = "hi there";
     str2 = ft_strdup(str);
-    printf("%s", str);
-}*/
+    str3 = strdup(str);
+    printf("My function; %s\n", str2);
+    printf("Library function; %s", str3);
+}
+*/
