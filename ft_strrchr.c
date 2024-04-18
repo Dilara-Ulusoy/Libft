@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdio.h>
+
 char *ft_strrchr(const char *s, int c) 
 {
     const unsigned char *str =(const unsigned char *)s;
