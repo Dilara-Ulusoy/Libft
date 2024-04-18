@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <string.h>
 
 void *ft_memmove(void *dst, const void *src, size_t len) {
     unsigned char *str1 = (unsigned char *)dst;
@@ -24,7 +22,9 @@ void *ft_memmove(void *dst, const void *src, size_t len) {
     }
     return dst; // Return the original destination pointer
 }
-
+/*
+#include <stdio.h>
+#include <string.h>
 int main() {
     char dest[] = "Hello World!";
 
@@ -40,3 +40,4 @@ int main() {
 
     return 0;
 }
+*/
