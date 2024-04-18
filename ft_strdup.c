@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
 	int	i;
 
