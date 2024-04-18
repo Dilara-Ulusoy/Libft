@@ -1,4 +1,3 @@
-#include <stdio.h>
 
 char *ft_strchr(const char *s, int c) 
 {
@@ -19,14 +18,17 @@ char *ft_strchr(const char *s, int c)
     }
     return NULL; // If not found, return NULL
 }
-
+*/
+#include <stdio.h>
+#include <string.h>
 int main()
 {
-    char str[] = "My name is Dilara";
-    printf("%s", ft_strchr(str, 'a'));
-    return 0;
+    char str[] = "My name is Dilara-";
+    printf("My function: %s\n", ft_strchr(str, 'a'));
 
-    char str2[] = "My name is Dilara";
-    printf("%s", strchr(str2, 'a'));
+    char str2[] = "My name is Dilara-";
+    printf("Library function: %s", strchr(str2, 'a'));
     return 0;
 }
+/*
+
