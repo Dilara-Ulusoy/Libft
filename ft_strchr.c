@@ -18,7 +18,7 @@ char *ft_strchr(const char *s, int c)
     }
     return NULL; // If not found, return NULL
 }
-*/
+/*
 #include <stdio.h>
 #include <string.h>
 int main()
@@ -30,5 +30,5 @@ int main()
     printf("Library function: %s", strchr(str2, 'a'));
     return 0;
 }
-/*
+*/
 
