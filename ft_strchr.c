@@ -25,4 +25,8 @@ int main()
     char str[] = "My name is Dilara";
     printf("%s", ft_strchr(str, 'a'));
     return 0;
+
+    char str2[] = "My name is Dilara";
+    printf("%s", strchr(str2, 'a'));
+    return 0;
 }
