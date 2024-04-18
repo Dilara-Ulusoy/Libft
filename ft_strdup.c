@@ -27,18 +27,18 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *s)
 {
 	int		i;
 	char	*copy;
 
 	i = 0;
-	while (src[i])
+	while (s[i])
 		i++;
 	copy = (char *) malloc(sizeof(char) * (i + 1));
 	if (!copy)
 		return (0);
-	ft_strcpy(copy, src);
+	ft_strcpy(copy, s);
 	return (copy);
 }
 /*
