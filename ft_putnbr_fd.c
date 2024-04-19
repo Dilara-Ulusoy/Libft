@@ -6,7 +6,7 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 09:45:29 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/19 09:48:14 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/04/19 12:41:16 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -27,13 +27,13 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n >= 10 && n != -2147483648)
 	{
 		ft_putnbr_fd(n / 10, fd);
-        ft_putnbr_fd(n % 10, fd);
-    }
-    else if (n != -2147483648)
-    {
-        digit = (n % 10) + '0';
-        ft_putchar_fd(digit, fd);
-    }
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else if (n != -2147483648)
+	{
+		digit = (n % 10) + '0';
+		ft_putchar_fd(digit, fd);
+	}
 }
 /*
 int main()
