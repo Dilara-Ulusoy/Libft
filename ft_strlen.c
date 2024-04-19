@@ -9,15 +9,16 @@
 /*   Updated: 2024/02/21 16:29:45 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
-	char	*start;
+	int	i;
 
-	start = str;
-	while (*str != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		str++;
+		i++;
 	}
-	return (str - start);
+	return (i);
 }

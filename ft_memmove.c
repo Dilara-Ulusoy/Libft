@@ -1,26 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/19 10:36:18 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/19 10:59:31 by dakcakoc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len) {
-    unsigned char *str1 = (unsigned char *)dst;
-    const unsigned char *str2 = (const unsigned char *)src;
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	unsigned char		*str1;
+	const unsigned char	*str2;
+	size_t				i;
 
-   if (!dst && !src)
-        return (NULL);
-   
-    if (str1 < str2) {
-        // Copy forwards if dest is before src
-        size_t i = 0;
-        while (i < len) {
-            str1[i] = str2[i];
-            i++;
-        }
-    } else {
-        // Copy backwards if dest is after src
-        while (len > 0) {
-            len--;
-            str1[len] = str2[len];
-        }
-    }
-    return dst; // Return the original destination pointer
+	str1 = (unsigned char *)dst;
+	str2 = (const unsigned char *)src;
+	if (!dst && !src)
+		return (NULL);
+	if (str1 < str2)
+	{
+		i = 0;
+		while (i < len)
+		{
+			str1[i] = str2[i];
+			i++;
+		}
+	}
+	else
+	{
+		while (len-- > 0)
+		{
+			str1[len] = str2[len];
+		}
+	}
+	return (dst);
 }
 /*
 #include <stdio.h>
