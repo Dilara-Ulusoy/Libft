@@ -1,89 +1,52 @@
 
-//Her bir sayiyi rakam olarak al 
-// Sayinin uzunlugunda array buffer olustur
-//Rakamlari buffer'a ekle
-//While dongusunde her bir rakama '0' ekle ve ascii'de rakamin karsiligi harfi bul.
-
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c)
+static int digit_count(int n)
 {
-	write(1, &c, 1);
+    int digit = 0;
+    if (n == 0)
+        digit = 1;
+    if (n < 0)
+        digit += 1;
+    while (n != 0)
+    {
+        n = n / 10;
+        digit++;
+    }
+    return (digit);
 }
-
-void	ft_putnbr(int nb)
+char *ft_itoa(int n)
 {
-	char	digit;
+    char *result;
+    int d_count;
 
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-	}
-	digit = nb % 10 + '0';
-	write(1, &digit, 1);
+    d_count = digit_count(n);
+    result = (char *)malloc((sizeof(char) * (d_count + 1)));
+    if (!result)
+        return (NULL);
+    if (n == 0)
+        result[0] = '0';
+    result[d_count] = '\0';
+    if (n < 0)
+    {
+        n = -n;
+        result[0] = '-';
+    }
+    while (n != 0)
+    {
+        result[d_count - 1] = n % 10 + '0';
+        n = n / 10;
+        d_count--;
+    }
+    return (result);
 }
-
-char *itoa(int num, char *buffer, int base)
+/*
+int main()
 {
-    int current = 0;
-    int isNegative = 0;
-
-    // Handle 0 explicitely, otherwise empty string is printed
-    if (num == 0) {
-        buffer[current++] = '0';
-        buffer[current] = '\0';
-        return buffer;
-    }
-
-    // Handle negative numbers
-    if (num < 0 && base == 10) {
-        isNegative = 1;
-        num = -num;
-    }
-
-    // Process individual digits using ft_putnbr
-    ft_putnbr(num);
-
-    // Convert the result of ft_putnbr to string
-    while (num != 0) {
-        buffer[current++] = num % 10 + '0';
-        num = num / 10;
-    }
-
-    // If number is negative, append '-'
-    if (isNegative)
-        buffer[current++] = '-';
-
-    buffer[current] = '\0'; // Append string terminator
-
-    // Reverse the string
-    int start = 0;
-    int end = current - 1;
-    while (start < end) {
-        char temp = buffer[start];
-        buffer[start] = buffer[end];
-        buffer[end] = temp;
-        start++;
-        end--;
-    }
-
-    return buffer;
-}
-
-int main() {
-    int num = -12345;
-    int base = 10;
-    char buffer[50];
-    printf("itoa: %s\n", itoa(num, buffer, base));
+    int num = 12345;
+    printf("itoa: %s\n", ft_itoa(num));
     return 0;
 }
+*/
