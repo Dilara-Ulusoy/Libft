@@ -1,29 +1,26 @@
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char *ft_strrchr(const char *s, int c) 
 {
     const unsigned char *str =(const unsigned char *)s;
-    unsigned char b = (unsigned char)c;  // Cast the search character to unsigned char
-    const unsigned char *lastoccur = NULL;
+    unsigned char b = (unsigned char)c;
+    const unsigned char *lastoccur = 0;
 
-    while (*str != '\0') 
-    // Iterate through the string looking for 'b' or the end of the string
+    while (*str != '\0')
     {
-        if (*str == b) 
+        if (*str == b)
         {
             lastoccur = str;
         }
-        if (b == '\0') 
-        {
-            return (char *)str;
-        }
         str++;
-        
+    }
+    if (b == '\0')
+    {
+            return (char *)str;
     }
     return(char *)lastoccur;
 }
-
+/*
 int main()
 {
     char str1[] = "My name is Dilara";
@@ -32,4 +29,4 @@ int main()
     char str2[] = "My name is Dilara";
     printf("String 2: %s",  strrchr(str2, 'a'));
     return 0;
-}
+}*/
