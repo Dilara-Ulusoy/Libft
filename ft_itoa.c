@@ -16,7 +16,8 @@ static int digit_count(int n)
 }
 char *min_int()
 {
-    char *result = (char *)malloc(sizeof(char) * 12);
+    char *result;
+    result = (char *)malloc(sizeof(char) * 12);
     if (!result)
         return (NULL);
     ft_memcpy(result, "-2147483648", 12);
