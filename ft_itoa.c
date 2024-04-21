@@ -1,13 +1,10 @@
-
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static int digit_count(int n)
 {
     int digit = 0;
     if (n == 0)
-        digit = 1;
+        return 1;
     if (n < 0)
         digit += 1;
     while (n != 0)
@@ -15,8 +12,17 @@ static int digit_count(int n)
         n = n / 10;
         digit++;
     }
-    return (digit);
+    return digit;
 }
+char *min_int()
+{
+    char *result = (char *)malloc(sizeof(char) * 12);
+    if (!result)
+        return (NULL);
+    ft_memcpy(result, "-2147483648", 12);
+    return result;
+}
+
 char *ft_itoa(int n)
 {
     char *result;
@@ -26,22 +32,22 @@ char *ft_itoa(int n)
     result = (char *)malloc((sizeof(char) * (d_count + 1)));
     if (!result)
         return (NULL);
+    result[d_count] = '\0';
+    if (n == -2147483648)
+            return min_int();
     if (n == 0)
         result[0] = '0';
-    result[d_count] = '\0';
-    if (n < 0)
-    {
-        n = -n;
+    else if (n < 0)
         result[0] = '-';
-    }
     while (n != 0)
     {
-        result[d_count - 1] = n % 10 + '0';
+        result[d_count - 1] = (n < 0 ? -(n % 10) : n % 10) + '0';
         n = n / 10;
         d_count--;
     }
-    return (result);
+    return result;
 }
+
 /*
 int main()
 {
@@ -49,4 +55,5 @@ int main()
     printf("itoa: %s\n", ft_itoa(num));
     return 0;
 }
-*/
+ */
+
