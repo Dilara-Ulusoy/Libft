@@ -1,51 +1,31 @@
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
+
 char *ft_strtrim(char const *s1, char const *set)
 {
-    int len = strlen(s1);
-    char *buffer;
-    int occurrence = 0;
-    int i= 0;
-    int j;
-    
-    while(s1[i] != '\0')
+    int len;
+    int start = 0;
+    while (*s1 && ft_strchr(set, *s1))
     {
-        j=0;
-        while(set[j] != '\0')
-        {
-            if(s1[i] == set[j])
-            {
-            occurrence++;
-            }
-            j++;
-        }
-       i++;
+        s1++;
+        start++;
     }
-    buffer=(char *)malloc(sizeof(char) * occurrence);
-    if(!buffer)
+    len = ft_strlen(s1);
+    while (len > start && ft_strchr(set, s1[len - 1]))
     {
-    return (NULL);
+        len--;
+        
     }
-    while(s1[i] != '\0')
-    {
-        j=0;
-        while(set[j] != '\0')
-        {
-            if(s1[i] != set[j])
-            {
-            buffer[i] = s1[i];
-            }
-            j++;
-        }
-       i++;
-    }
-    return (buffer);
+    return ft_substr(s1, 0, len-start-1);
 }
-
-int main()
-{
-    char string[] = "---,Hello,,--";
-    char trim[] = "-,";
-    printf("%s", ft_strtrim(string,trim));
-}
+/*
+ #include <string.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ 
+ int main(void)
+ {
+ char string[] = "---,Hello000,,--\n";
+ char trim[] = "-,";
+ printf("%s", ft_strtrim(string, trim));
+ }
+ */
