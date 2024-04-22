@@ -6,7 +6,7 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 11:26:30 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/03/06 11:53:37 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:37:09 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -32,18 +32,18 @@ char	*ft_strcat(char *dest, const char *src)
 	return (dest);
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		totallen;
 	char	*output;
 
-    totallen = ft_strlen(s1) + ft_strlen(s2)+1;
+	totallen = ft_strlen(s1) + ft_strlen(s2) + 1;
 	output = (char *)malloc(totallen);
 	if (output == NULL)
 		return (NULL);
 	output[0] = '\0';
-    ft_strcat(output, s1);
-    ft_strcat(output, s2);
+	ft_strcat(output, s1);
+	ft_strcat(output, s2);
 	return (output);
 }
 /*
@@ -56,4 +56,3 @@ int main() {
     free(result);
     return 0;
 }*/
-

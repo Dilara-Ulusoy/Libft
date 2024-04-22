@@ -6,28 +6,31 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:37:58 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/17 10:55:32 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:41:49 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t ft_strlcat(char *dest, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
-    size_t i = 0;
-    size_t destlen = ft_strlen(dest);
-    size_t srclen = ft_strlen(src);
+	size_t	i;
+	size_t	destlen;
+	size_t	srclen;
 
-    if (dstsize <= destlen)
-    {
-        return srclen + dstsize;
-    }
-    while (destlen + i + 1 < dstsize)
-    {
-        dest[destlen + i] = src[i];
-        i++;
-    }
-    dest[destlen + i] = '\0';
-    return (destlen + srclen);
+	destlen = ft_strlen(dest);
+	srclen = ft_strlen(src);
+	i = 0;
+	if (dstsize <= destlen)
+	{
+		return (srclen + dstsize);
+	}
+	while (destlen + i + 1 < dstsize)
+	{
+		dest[destlen + i] = src[i];
+		i++;
+	}
+	dest[destlen + i] = '\0';
+	return (destlen + srclen);
 }
 /*
 int main()
@@ -39,10 +42,10 @@ int main()
     char b[] = "World";
     size_t result_len1 = ft_strlcat(x, y, 2);
     size_t result_len2 = strlcat(a, b, 2);
-    printf("Concatenated My string: %s\n", x); // Print the concatenated string
-    printf("Concatenated Library string: %s\n", a); // Print the concatenated string
-    printf("Total length my function: %zu\n", result_len1); // Print the total length
-    printf("Total length library function: %zu\n", result_len2); // Print the total length
+    printf("Concatenated My string: %s\n", x); 
+    printf("Concatenated Library string: %s\n", a); 
+    printf("Total length my function: %zu\n", result_len1);
+    printf("Total length library function: %zu\n", result_len2);
     return 0;
 }
 */
