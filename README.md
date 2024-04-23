@@ -138,6 +138,39 @@ int main () {
    return(0);
 }
 ```
+## ft_memchr.c
+
+**This C function searches for the first occurrence of the character c (an unsigned char) in the first n bytes of the string pointed to, by the argument s.**
+
+```c
+void	*ft_memchr(const void *s, int c, size_t n)
+```
+**Parameters**
+
+**s** − This is the pointer to the block of memory where the search is performed.
+
+**c** − This is the value to be passed as an int, but the function performs a byte per byte search using the unsigned char conversion of this value.
+
+**n** − This is the number of bytes to be analyzed.
+
+**Return Value**
+
+This function returns a pointer to the matching byte or NULL if the character does not occur in the given memory area.
+
+```c
+Example:
+
+int main()
+{
+    char str[] = "My name is Dilara";
+    printf("My function: %s\n", ft_memchr(str, 'a',4));
+    return 0;
+}
+
+Standart Output -->
+My function before memchr: = My name is Dilara
+My function after memchr= ame is Dilara
+```
 
 # test
 ## test'
