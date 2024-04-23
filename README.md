@@ -1,6 +1,6 @@
 # Libtf
 
-#### ft_memset.c
+## ft_memset.c
 ```c
 void	*ft_memset(void *b, int c, size_t len)
 ```
@@ -23,7 +23,7 @@ void	*ft_memset(void *b, int c, size_t len)
 
 Standart Output -> $$$$$$$ Hello World!
 ``` 
-#### ft_memcpy.c
+## ft_memcpy.c
 ```c
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 ```
@@ -48,7 +48,7 @@ Standart Output -->
 Before memcpy dest = 
 After memcpy dest = This my source string
 ```
-#### ft_memmove.c
+## ft_memmove.c
 
 ```c
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -62,7 +62,82 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 **n** − This is the number of bytes to be copied.
 
 **Return value** - This function returns a pointer to the destination, which is dst.
+```c
+Example: //If we work with two different arrays. 
 
+int main () {
+   char dest[] = "oldstring";
+   const char src[]  = "newstring";
+
+   printf("Before memmove dest = %s, src = %s\n", dest, src);
+   memmove(dest, src, 9);
+   printf("After memmove dest = %s, src = %s\n", dest, src);
+
+   return(0);
+}
+
+Standart Output -->
+Before memmove dest = oldstring, src = newstring
+After memmove dest = newstring, src = newstring
+```
+```c
+Example: //If we work with single array. 
+
+int main () {
+   char str[] = "abcde";
+   printf("Before memmove str %s", str);
+   memmove(str, str+2, 2);
+   printf("After memmove str %s", str);
+   return(0);
+}
+Standart Output -->
+Before memmove str = abcde
+After memmove str = cdcde
+```
+## ft_memcmp.c
+
+```c
+int ft_memcmp(const void *str1, const void *str2, size_t n)
+```
+**This function compares the first n bytes of memory area str1 and memory area str2.**
+
+**str1** − This is the pointer to a block of memory.
+
+**str2** − This is the pointer to a block of memory.
+
+**n** − This is the number of bytes to be compared.
+
+**Return Value**
+
+if Return value < 0 then it indicates str1 is less than str2.
+
+if Return value > 0 then it indicates str2 is less than str1.
+
+if Return value = 0 then it indicates str1 is equal to str2.
+
+```c
+Example;
+
+int main () {
+   char str1[15];
+   char str2[15];
+   int ret;
+
+   memcpy(str1, "abcdef", 6);
+   memcpy(str2, "ABCDEF", 6);
+
+   ret = memcmp(str1, str2, 5);
+
+   if(ret > 0) {
+      printf("str2 is less than str1");
+   } else if(ret < 0) {
+      printf("str1 is less than str2");
+   } else {
+      printf("str1 is equal to str2");
+   }
+   return(0);
+}
+```
 
 # test
 ## test'
