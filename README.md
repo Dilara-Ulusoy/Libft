@@ -10,3 +10,16 @@ void	*ft_memset(void *b, int c, size_t len)
   char str[] = "Hello World!";
   memset(str,'$',7); Output -> $$$$$$$ Hello World!
   */
+
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+/*
+ This function void *memcpy(void *dest, const void *src, size_t n) copies n characters from memory area src to memory area dest.
+ dest − This is pointer to the destination array where the content is to be copied, type-casted to a pointer of type void*.
+ src − This is pointer to the source of data to be copied, type-casted to a pointer of type void*.
+ n − This is the number of bytes to be copied.
+ Return value - This function returns a pointer to destination, which is dest.
+ Example; char dest[50];
+        char src[] = "This my source string";
+ 
+ */
