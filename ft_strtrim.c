@@ -28,8 +28,15 @@ char *ft_strtrim(char const *s1, char const *set)
  
  int main(void)
  {
- char string[] = "---,Hello000,,--\n";
- char trim[] = "-,";
- printf("%s", ft_strtrim(string, trim));
+ char str1[] = "---,Hello,,--";
+    char trim1[] = "-,";
+    printf("%s\n", ft_strtrim(str1, trim1));
+     
+    char str2[] = "---,Hello,,--";
+    printf("Empty string: %s\n", ft_strtrim(str2, ""));
+
+    char str3[] = "--lll-,Hello,,ll--";
+    char trim3[] = "-l,";
+    printf("%s\n", ft_strtrim(str3, trim3));
  }
  */
