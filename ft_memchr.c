@@ -6,7 +6,7 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:51:37 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/22 14:26:53 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/04/24 10:32:15 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -41,10 +41,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 int main()
 {
     char str[] = "My name is Dilara-";
-    printf("My function: %s\n", ft_memchr(str, 'a',2));
+    printf("My function: %s\n", ft_memchr(str, 'a',5));
 
     char str2[] = "My name is Dilara-";
-    printf("Library function: %s", memchr(str2, 'a', 2));
+    printf("Library function: %s", memchr(str2, 'a', 5));
     return 0;
-}
-*/
+}*/
