@@ -24,7 +24,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		diff = str1[i] - str2[i];
-		if (diff != 0 || str1[i] == '/0')
+		if (diff != 0)
 			return (diff);
 		i++;
 	}
