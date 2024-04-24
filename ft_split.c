@@ -1,39 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/24 10:49:53 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/24 10:56:18 by dakcakoc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
-/*
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-*/
 
-static int count_words(const char *s, char c) {
-    int count = 0;
-    int is_word = 0;
+static int	count_words(const char *s, char c)
+{
+	int	count;
+	int	is_word;
 
-    while (*s)
-    {
-        if (*s != c && !is_word) {
-            is_word = 1;
-            count++;
-        } else if (*s == c) {
-            is_word = 0;
-        }
-        s++;
-    }
-    return count;
+	count = 0;
+	is_word = 0;
+	while (*s)
+	{
+		if (*s != c && !is_word)
+		{
+			is_word = 1;
+			count++;
+		}
+		else if (*s == c)
+			is_word = 0;
+		s++;
+	}
+	return (count);
 }
 
-static char **malloc_list(int word_count)
+static char	**malloc_list(int word_count)
 {
-    char **list = (char **)malloc(sizeof(char *) * (word_count + 1));
-    if (!list)
-        return NULL;
-    return list;
+	char	**list;
+
+	list = (char **)malloc(sizeof(char *) * (word_count + 1));
+	if (!list)
+		return (NULL);
+	return (list);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    int word_count; // Count the number of words
-    int i = 0;
+	int word_count;     
+	int i = 0;
     int k = 0;
     int j;
     char **list;
@@ -64,6 +76,10 @@ char **ft_split(char const *s, char c)
     return list;
 }
 /*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 int main(void)
 {
     char *str = "Hello,World,This,Is,Sparta";
