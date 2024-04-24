@@ -22,7 +22,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	if (*s1 == '\0' || *set == '\0')
 		return (ft_strdup(""));
-	while (s1[start] && ft_strchr(set, s1[start]))
+	while (s1[start] && ft_strchr(set, s1[start])) // The loop will continue until the strchr function is false.
 	{
 		start++;
 	}
