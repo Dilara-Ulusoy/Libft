@@ -174,6 +174,13 @@ My function before memchr: = My name is Dilara
 My function after memchr= ame is Dilara
 ```
 
+## ft_striteri.c
+
+```c
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+```
+ft_striteri function iterates over each character of the string s and applies the function f to each character, passing its index and a pointer to the character.
+
 # test
 ## test'
 ### test
