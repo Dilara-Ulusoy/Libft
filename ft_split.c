@@ -50,6 +50,7 @@ char	**ft_split(char const *s, char c)
     int j;
     char **list;
     char *word;
+
     
     word_count = count_words(s, c);
     list = malloc_list(word_count);
