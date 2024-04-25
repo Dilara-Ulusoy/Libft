@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		return ((char *)haystack);
 	}
-	while (haystack[i] != '\0' && i < len)
+	while (i + j < len && haystack[i] != '\0')
 	{
 		j = 0;
 		while (haystack[i + j] != '\0' && haystack[i + j] == needle[j])
@@ -35,10 +35,24 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 /*
-#include <stdio.h>
+ #include <stddef.h>
+ #include <string.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+
 int main()
 {
     char str[] = "This is an apple!";
     char needle[]= "is";
-    printf("%s", ft_strnstr(str,needle,4));
-}*/
+    printf("%s\n", ft_strnstr(str,needle,4));
+     printf("%s\n", strnstr(str,needle,4));
+    
+    char *s1 = "MZIRIBMZIRIBMZE123";
+     char *s2 = "MZIRIBMZE";
+     size_t max = strlen(s2);
+     char *i1 = strnstr(s1, s2, max);
+     printf("Library %s\n", i1);
+    char *i2 = ft_strnstr(s1, s2, max);
+     printf("My function %s", i2);
+}
+*/
