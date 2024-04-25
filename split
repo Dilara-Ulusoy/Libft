@@ -1,0 +1,87 @@
+#include <stdlib.h>
+#include <stddef.h>
+#include <string.h>
+
+static int	count_words(const char *s, char c)
+{
+	int	count;
+	int	is_word;
+
+	count = 0;
+	is_word = 0;
+	while (*s)
+	{
+		if (*s != c && !is_word)
+		{
+			is_word = 1;
+			count++;
+		}
+		else if (*s == c)
+			is_word = 0;
+		s++;
+	}
+	return (count);
+}
+
+static char	**malloc_list(int word_count)
+{
+	char	**list;
+
+	list = (char **)malloc(sizeof(char *) * (word_count + 1));
+	if (!list)
+		return (NULL);
+	return (list);
+}
+static char *word_finder(const char *s, char c) {
+    int len = 0;
+    int i;
+    while (s[len] && s[len] != c)
+        len++;
+    char *word = (char *)malloc(sizeof(char) * (len + 1));
+    if (!word)
+        return NULL;
+    for (int i = 0; i < len; i++)
+        word[i] = s[i];
+    word[len] = '\0';
+    return word;
+}
+    
+char **ft_split(const char *s, char c) {
+    int word_count = count_words(s, c);
+    char **list = malloc_list(word_count);
+    if (!list)
+        return NULL;
+
+    int i = 0, k = 0;
+    while (s[i]) {
+        if (s[i] != c) {
+            char *word = word_finder(s + i, c);
+            list[k++] = word;
+            i += strlen(word); // Move past the word
+        } else {
+            i++; // Skip the separator
+        }
+    }
+    list[k] = NULL;
+    return list;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void)
+{
+    char *str = "Hello,World,This,Is,Sparta";
+    char **result = ft_split(str, ',');
+    int i = 0;
+    // Print the result
+    while (result[i])
+    {
+        printf("%s\n", result[i]);
+        free(result[i]); // Free memory
+        i++;
+    }
+    free(result); // Free memory
+    return 0;
+}
