@@ -18,18 +18,28 @@ void	*ft_calloc(size_t nitems, size_t size)
 	char	*outcome;
 
 	totalsize = size * nitems;
-	i = 0;
-	if (size == 0 || nitems == 0)
-	{
-		return (NULL);
-	}
+    if (nitems != 0 && size > SIZE_MAX / nitems)
+    {
+        return (NULL);
+    }
 	outcome = malloc(totalsize);
 	if (!outcome)
 		return (NULL);
+    i = 0;
 	while (i < totalsize)
 	{
 		outcome[i] = 0;
 		i++;
 	}
-	return (outcome);
+	return ((void *)outcome);
 }
+/*
+ int main()
+ {
+    char first[] = "Hello";
+    char *result;
+ result = ft_calloc(sizeof(char),5);
+ }
+ 
+ //If size of each item (size) is bigger than the max possible size for each item that memory can hold it (size_max / nitems), it means that memory required to fit all the items into memory is too big and the program runs of of memory
+ */
