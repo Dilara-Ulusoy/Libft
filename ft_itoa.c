@@ -28,11 +28,8 @@ static int	digit_count(int n)
 	return (digit);
 }
 
-static char	*min_int(void)
+static char	*min_int(char *result)
 {
-	char	*result;
-
-	result = (char *)malloc(sizeof(char) * 12);
 	if (!result)
 		return (NULL);
 	ft_memcpy(result, "-2147483648", 12);
@@ -50,7 +47,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	result[d_count] = '\0';
 	if (n == -2147483648)
-		return (min_int());
+		return (min_int(result));
 	if (n == 0)
 		result[0] = '0';
 	if (n < 0)
