@@ -6,7 +6,7 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:12:00 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/22 10:25:28 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:31:56 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -28,7 +28,7 @@ static int	digit_count(int n)
 	return (digit);
 }
 
-char	*min_int(void)
+static char	*min_int(void)
 {
 	char	*result;
 
