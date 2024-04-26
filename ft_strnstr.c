@@ -35,20 +35,20 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 /*
- #include <stddef.h>
- #include <string.h>
- #include <stdio.h>
- #include <stdlib.h>
+#include <stddef.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
     char str[] = "This is an apple!";
-    char needle[]= "is";
-    printf("%s\n", ft_strnstr(str,needle,4));
-     printf("%s\n", strnstr(str,needle,4));
+    char needle[]= "is an";
+    printf("%s\n", ft_strnstr(str,needle,10));
+     printf("%s\n", strnstr(str,needle,10));
     
     char *s1 = "MZIRIBMZIRIBMZE123";
-     char *s2 = "MZIRIBMZE";
+     char *s2 = "MZIRIBMZEll";
      size_t max = strlen(s2);
      char *i1 = strnstr(s1, s2, max);
      printf("Library %s\n", i1);
