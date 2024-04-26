@@ -23,7 +23,7 @@ static int	count_words(const char *s, char c)
 	return (count);
 }
 
-static char	**malloc_list(int word_count)
+static char **malloc_list(int word_count)
 {
 	char	**list;
 
@@ -32,43 +32,45 @@ static char	**malloc_list(int word_count)
 		return (NULL);
 	return (list);
 }
-static char *word_finder(const char *s, char c) {
-    int len = 0;
-    int i;
-    while (s[len] && s[len] != c)
-        len++;
-    char *word = (char *)malloc(sizeof(char) * (len + 1));
-    if (!word)
-        return NULL;
-    for (int i = 0; i < len; i++)
-        word[i] = s[i];
-    word[len] = '\0';
-    return word;
-}
-    
-char **ft_split(const char *s, char c) {
-    int word_count = count_words(s, c);
-    char **list = malloc_list(word_count);
-    if (!list)
-        return NULL;
 
-    int i = 0, k = 0;
-    while (s[i]) {
-        if (s[i] != c) {
+static char *word_finder(const char *s, char c)
+{
+	int len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	char *word = (char *)malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return NULL;
+	strncpy(word, s, len);
+	word[len] = '\0';
+	return (word);
+}
+
+char **ft_split(const char *s, char c)
+{
+    int word_count;
+    char **list;
+    int i = 0;
+    int k = 0;
+
+    word_count = count_words(s, c);
+    list = malloc_list(word_count);
+    while (s[i])
+    {
+        if (s[i] != c)
+        {
             char *word = word_finder(s + i, c);
             list[k++] = word;
             i += strlen(word); // Move past the word
-        } else {
-            i++; // Skip the separator
         }
+        else
+            i++; // Skip the separator
     }
     list[k] = NULL;
     return list;
 }
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int main(void)
 {
