@@ -6,7 +6,7 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:02:28 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/22 10:08:04 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/04/25 14:47:45 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,14 +18,14 @@ void	*ft_calloc(size_t nitems, size_t size)
 	char	*outcome;
 
 	totalsize = size * nitems;
-    if (nitems != 0 && size > SIZE_MAX / nitems)
-    {
-        return (NULL);
-    }
+	if (nitems != 0 && size > SIZE_MAX / nitems)
+	{
+		return (NULL);
+	}
 	outcome = malloc(totalsize);
 	if (!outcome)
 		return (NULL);
-    i = 0;
+	i = 0;
 	while (i < totalsize)
 	{
 		outcome[i] = 0;
@@ -41,5 +41,8 @@ void	*ft_calloc(size_t nitems, size_t size)
  result = ft_calloc(sizeof(char),5);
  }
  
- //If size of each item (size) is bigger than the max possible size for each item that memory can hold it (size_max / nitems), it means that memory required to fit all the items into memory is too big and the program runs of of memory
+ //If size of each item (size) is bigger than the max
+ possible size for each item which memory can hold it (size_max / nitems),
+ then it means that memory required to fit all the items into memory is
+ too big and the program runs of of memory
  */

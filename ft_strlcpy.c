@@ -33,7 +33,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 
 int main()
 {
-   char x[25];
+    char x[25];
     char y[] = "Hello World!";
     printf("Before destination string: %s\n", x);
     int result_len = ft_strlcpy(x, y, 10);
@@ -50,6 +50,5 @@ int main()
     printf("After destination string: %s\n", a);
     printf("Original source string lenght: %d\n", result_len1);
     printf("Copied my string: %d\n\n", result1);
-    return 0;
 }
  */
