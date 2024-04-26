@@ -18,10 +18,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int	start;
 
 	start = 0;
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
-	if (*s1 == '\0' || *set == '\0')
-		return (ft_strdup(""));
+	if (!set)
+		set = "";
 	while (s1[start] && ft_strchr(set, s1[start]))
 	{
 		start++;
