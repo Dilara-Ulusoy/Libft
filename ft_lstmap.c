@@ -8,26 +8,23 @@ typedef struct s_list
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
-	t_list	*node;
-	void	*mapped_content; 
+	t_list	*new_node;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL); 
     
-    new_lst = NULL;
-	while (lst) 
+    new_lst = NULL; // Initialize the new list to NULL 
+	while (lst)  // While the list is not empty 
 	{
-		mapped_content = f(lst->content); // Apply the function to the content of the node
-		node = ft_lstnew(mapped_content); // Create a new node with the mapped content
-		if (!node)
+		new_node = ft_lstnew(f(lst->content)); // Create a new node with the mapped content
+		if (!new_node)
 		{
-			del(mapped_content); // Delete the content of the node
             ft_lstclear(&new_lst, del); // Clear the new list
             return (NULL); // Return NULL
 		}
         else
         {
-            ft_lstadd_back(&new_lst, node); // Add the new node to the end of the new list
+            ft_lstadd_back(&new_lst, new_node); // Add the new node to the new list
 		    lst = lst->next; // Move to the next node
         }
 		
