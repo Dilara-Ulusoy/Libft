@@ -6,9 +6,10 @@
 /*   By: dakcakoc <dakcakoc@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 12:42:03 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/27 23:15:28 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/04/28 20:25:57 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void    ft_lstadd_front(t_list **lst, t_list *new)
 {

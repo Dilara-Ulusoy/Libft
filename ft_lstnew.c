@@ -11,7 +11,7 @@ t_list *ft_lstnew(void *content)
   new_node ->next = NULL;
   return(new_node);
 }
-
+/*
 int main()
 {
     int data = 42;
@@ -20,4 +20,4 @@ int main()
     //Then, (int *) indicates that the content is an integer. Finally, * retrieves the integer value.
     free(node);
     return (0);
-}
+}*/
