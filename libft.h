@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
+/*   By: dakcakoc <dakcakoc@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 09:44:32 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/25 14:45:45 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/04/28 16:14:57 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdint.h>
-# include <limits.h>
+
+typedef struct s_list
+{
+    void			*content;
+    struct s_list	*next;
+}t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
