@@ -42,38 +42,47 @@ static char	**malloc_list(int word_count)
 	return (list);
 }
 
-char	**ft_split(char const *s, char c)
+static char    *word_finder(const char *s, char c)
 {
-	int word_count;     
-	int i = 0;
-    int k = 0;
-    int j;
-    char **list;
-    char *word;
-    
+    int        len;
+    char    *word;
+
+    len = 0;
+    while (s[len] && s[len] != c)
+        len++;
+    word = (char *)malloc(sizeof(char) * (len + 1));
+    if (!word)
+        return (NULL);
+    ft_strlcpy(word, s, len + 1 );
+    word[len] = '\0';
+    return (word);
+}
+
+char    **ft_split(const char *s, char c)
+{
+    int        word_count;
+    char    **list;
+    char    *word;
+    int        i;
+    int        k;
+
+    i = 0;
+    k = 0;
     word_count = count_words(s, c);
     list = malloc_list(word_count);
     while (s[i])
     {
         if (s[i] != c)
         {
-            j = i;
-            while (s[j] && s[j] != c)
-                j++;
-            word = (char *)malloc(sizeof(char) * (j - i + 1));
-            if (!word)
-                return NULL;
-            j = 0;
-            while (s[i] && s[i] != c)
-                word[j++] = s[i++];
-            word[j] = '\0'; // Null terminate the word*/
-            list[k++] = word; // Add the word to the outcome array
+            word = word_finder(s + i, c);
+            list[k++] = word;
+            i = i + ft_strlen(word);
         }
         else
             i++;
     }
-    list[k] = NULL; // Null terminate the outcome array
-    return list;
+    list[k] = NULL;
+    return (list);
 }
 /*
 #include <stdio.h>
