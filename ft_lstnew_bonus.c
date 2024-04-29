@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 13:20:30 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/17 13:26:16 by dakcakoc         ###   ########.fr       */
+/*   Created: 2024/04/29 13:58:36 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/29 13:58:46 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned char	*str;
-	size_t			i;
+	t_list	*new_node;
 
-	str = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		str[i] = '\0';
-		i++;
-	}
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node ->content = content;
+	new_node ->next = NULL;
+	return (new_node);
 }
 /*
-#include <strings.h>
-#include <stdio.h>
 int main()
 {
-   char x[] = "Hello";
-   printf("Before ft_bzero: %s\n", x);
-   ft_bzero(x, 5);
-   bzero(x, 5);
-   printf("After ft_bzero: %s\n", x); // Print x after erasing first 5 bytes
-   return 0; // Return from main function
-}
-*/
+    int data = 42;
+    t_list *node = ft_lstnew(&data);
+    printf("Content of the node: %d\n", *((int *)node->content));        
+   	free(node);
+    return (0);
+}*/

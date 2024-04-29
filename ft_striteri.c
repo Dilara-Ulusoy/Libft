@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 13:20:30 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/17 13:26:16 by dakcakoc         ###   ########.fr       */
+/*   Created: 2024/04/25 16:56:54 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/25 16:57:49 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_bzero(void *s, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned char	*str;
-	size_t			i;
+	unsigned int	i;
 
-	str = (unsigned char *)s;
 	i = 0;
-	while (i < n)
+	while (s[i] != '\0')
 	{
-		str[i] = '\0';
+		(*f)(i, &s[i]);
 		i++;
 	}
 }
 /*
-#include <strings.h>
-#include <stdio.h>
-int main()
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+
+void func(unsigned int i, char *c)
 {
-   char x[] = "Hello";
-   printf("Before ft_bzero: %s\n", x);
-   ft_bzero(x, 5);
-   bzero(x, 5);
-   printf("After ft_bzero: %s\n", x); // Print x after erasing first 5 bytes
-   return 0; // Return from main function
+    *c = *c - 32;
+}
+
+ int main()
+{
+    char str[10] = "dilara";
+    printf("Result before my function applied: %s\n", str);
+    ft_striteri(str, &func);
+    printf("Result after my function applied: %s\n", str);
+    return 0;
 }
 */

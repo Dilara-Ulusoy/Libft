@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 13:20:30 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/17 13:26:16 by dakcakoc         ###   ########.fr       */
+/*   Created: 2024/04/29 13:37:53 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/29 13:39:20 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	unsigned char	*str;
-	size_t			i;
+	t_list	*last;
 
-	str = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	if (*lst == NULL)
 	{
-		str[i] = '\0';
-		i++;
+		*lst = new;
+		return ;
 	}
+	last = *lst;
+	while (last -> next)
+	{
+		last = last -> next;
+	}
+	last -> next = new;
 }
-/*
-#include <strings.h>
-#include <stdio.h>
-int main()
-{
-   char x[] = "Hello";
-   printf("Before ft_bzero: %s\n", x);
-   ft_bzero(x, 5);
-   bzero(x, 5);
-   printf("After ft_bzero: %s\n", x); // Print x after erasing first 5 bytes
-   return 0; // Return from main function
-}
-*/

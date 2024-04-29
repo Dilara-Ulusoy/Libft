@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
+/*   By: dakcakoc <dakcakoc@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 11:02:02 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/19 11:02:41 by dakcakoc         ###   ########.fr       */
+/*   Created: 2024/04/16 12:42:03 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/29 13:40:24 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+	new->next = *lst;
+	*lst = new;
 }
-/*
-int main() {
-    char *text = "Hello, world!";
-    int fd = 1;
-    ft_putendl_fd(text, fd);
-    return 0;
-}*/

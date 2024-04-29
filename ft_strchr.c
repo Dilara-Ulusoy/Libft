@@ -1,22 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/22 10:38:55 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/22 11:35:17 by dakcakoc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c) 
+char	*ft_strchr(const char *s, int c)
 {
-    const unsigned char *str =(const unsigned char *)s;
-    unsigned char b = (unsigned char)c;  // Cast the search character to unsigned char
+	const unsigned char	*str;
+	unsigned char		b;
 
-    while (*str != '\0') // Iterate through the string looking for 'b' or the end of the string
-    {
-        if (*str == b) 
-        {
-            return (char *)str;  // Correct casting back to char* when returning
-        }
-        if (b == '\0') 
-        {
-            return (char *)str; // Also cast back to char* for the null terminator
-        }
-        str++;
-    }
-    return NULL; // If not found, return NULL
+	b = (unsigned char)c;
+	str = (const unsigned char *)s;
+	while (*str != '\0')
+	{
+		if (*str == b)
+		{
+			return ((char *)str);
+		}
+		str++;
+	}
+	if (b == '\0')
+	{
+		return ((char *)str);
+	}
+	return (0);
 }
 /*
 #include <stdio.h>
@@ -31,4 +44,3 @@ int main()
     return 0;
 }
 */
-

@@ -6,42 +6,49 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:37:58 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/17 10:55:32 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:13:46 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libc.h"
 
-int	ft_atoi(char *str)
+static int	ft_isspace(const char c)
 {
-	int			i;
-	long int	result;
+	if (c == ' ' || (c >= '\t' && c <= '\r'))
+		return (1);
+	else
+		return (0);
+}
+
+int	ft_atoi(const char *str)
+{
+	int long	result;
 	int			sign;
 
-	i = 0;
 	result = 0;
 	sign = 1;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-')
 	{
-		i++;
+		sign = sign * (-1);
+		str++;
 	}
-	while (str[i] == '-' || str[i] == '+')
+	else if (*str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
 	{
-		if (str[i] == '-')
-			sign = sign * (-1);
-		i++;
+		result = result * 10 + (*str - '0');
+		str++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	if (sign == 1 && result > INT_MAX)
+		return (-1);
+	else if (sign == -1 && result < INT_MIN)
+		return (0);
+	return ((int) result * sign);
 }
 /*
-#include <stdio.h>
-#include <stdlib.h>
-
 int main() {
-    char str[] = "2147483647";
+    char str[] = "9223372036854775810";
     printf("%d\n", ft_atoi(str));
     printf("%d\n", atoi(str));
     return 0;

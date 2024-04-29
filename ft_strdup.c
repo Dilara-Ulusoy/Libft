@@ -9,9 +9,7 @@
 /*   Updated: 2024/03/04 09:33:49 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-#include <unistd.h>
+#include "libft.h"
 
 char	*ft_strcpy(char *dest, const char *src)
 {

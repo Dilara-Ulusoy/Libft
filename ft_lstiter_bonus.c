@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 13:20:30 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/17 13:26:16 by dakcakoc         ###   ########.fr       */
+/*   Created: 2024/04/29 14:01:08 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/29 14:01:12 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	unsigned char	*str;
-	size_t			i;
-
-	str = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	if (!lst || !f)
+		return ;
+	while (lst)
 	{
-		str[i] = '\0';
-		i++;
+		f(lst ->content);
+		lst = lst ->next;
 	}
 }
-/*
-#include <strings.h>
-#include <stdio.h>
-int main()
-{
-   char x[] = "Hello";
-   printf("Before ft_bzero: %s\n", x);
-   ft_bzero(x, 5);
-   bzero(x, 5);
-   printf("After ft_bzero: %s\n", x); // Print x after erasing first 5 bytes
-   return 0; // Return from main function
-}
-*/

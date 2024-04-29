@@ -1,40 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 14:31:19 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/16 15:39:34 by dakcakoc         ###   ########.fr       */
+/*   Created: 2024/04/22 10:32:10 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/26 11:37:27 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char	*p;
-	unsigned char	v;
-	size_t			i;
+	char			*subs;
+	unsigned int	i;
+	unsigned int	slen;
 
-	p = (unsigned char *)b;
-	v = (unsigned char)c;
+	slen = ft_strlen(s);
+	if (start >= slen)
+		return (ft_strdup(""));
+	if (len > slen - start)
+		len = slen - start;
+	subs = (char *)malloc(sizeof(char) * (len + 1));
+	if (!subs)
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{
-		p[i] = v;
+		subs[i] = s[start + i];
 		i++;
 	}
-	return (b);
+	subs[i] = '\0';
+	return (subs);
 }
 /*
+#include <stdlib.h>
 #include <stdio.h>
 int main()
 {
-   char str[40] = "This is an example sentence";
-   printf("Normal String = %s\n\n", str);
-   ft_memset(str, '!', 5);
-   printf("String after memset =  %s\n",str);
-   return 0;
-}
- */
+  const char string[] = "This is Dilara";
+  printf("%s", ft_substr(string,8, 4));
+}*/

@@ -1,40 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 13:20:30 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/17 13:26:16 by dakcakoc         ###   ########.fr       */
+/*   Created: 2024/04/22 13:51:37 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/24 10:32:15 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*str;
-	size_t			i;
+	const unsigned char	*str;
+	unsigned char		b;
+	size_t				i;
 
-	str = (unsigned char *)s;
+	str = (const unsigned char *)s;
+	b = (unsigned char)c;
 	i = 0;
 	while (i < n)
 	{
-		str[i] = '\0';
+		if (str[i] == b)
+		{
+			return ((void *)&str[i]);
+		}
 		i++;
 	}
+	return (NULL);
 }
 /*
-#include <strings.h>
 #include <stdio.h>
+#include <string.h>
+#include <stddef.h>
 int main()
 {
-   char x[] = "Hello";
-   printf("Before ft_bzero: %s\n", x);
-   ft_bzero(x, 5);
-   bzero(x, 5);
-   printf("After ft_bzero: %s\n", x); // Print x after erasing first 5 bytes
-   return 0; // Return from main function
-}
-*/
+    char str[] = "My name is Dilara-";
+    printf("My function: %s\n", ft_memchr(str, 'a',5));
+
+    char str2[] = "My name is Dilara-";
+    printf("Library function: %s", memchr(str2, 'a', 5));
+    return 0;
+}*/
