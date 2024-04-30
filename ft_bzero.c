@@ -38,3 +38,8 @@ int main()
    return 0; // Return from main function
 }
 */
+/*
+DESCRIPTION
+     The bzero() function writes n zeroed bytes to the string s.  If n is
+     zero, bzero() does nothing.
+*/
