@@ -54,3 +54,8 @@ int main() {
     return 0;
 }
 */
+/* 
+DESCRIPTION
+     The atoi() function converts the initial portion of the string pointed to
+     by str to int representation.
+*/
