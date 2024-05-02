@@ -185,7 +185,15 @@ ft_striteri function iterates over each character of the string s and applies th
 ```c
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 ```
-This function takes a linked list and apply function "f" to the each element of the list and return a new list. If any error occurs during the memory allocation, it deletes the new list.
+This function iterates over each element of the list, applies the function 
+f to the content of each element, and creates a new list with the results. 
+If the memory allocation fails at any point, it deletes the newly created list and returns NULL.
+
+lst: The beginning of the list to iterate.
+
+f: The function to apply to each element of the list.
+
+del: The function used to delete the content of an element if needed.
 
 # test
 ## test'
