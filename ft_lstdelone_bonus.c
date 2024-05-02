@@ -19,3 +19,14 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		free(lst);
 	}
 }
+int main ()
+{
+    t_list *node1;
+    t_list *node2;
+    
+ node1 =(t_list *)malloc * sizeof(t_list);
+
+    
+
+    
+}
