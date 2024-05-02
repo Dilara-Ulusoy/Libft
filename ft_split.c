@@ -6,7 +6,7 @@
 /*   By: dakcakoc <dakcakoc@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 10:49:53 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/30 09:17:01 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/05/02 10:40:26 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -40,10 +40,21 @@ static int	find_word_len(char const *s, char c)
 		return (ft_strlen(s));
 }
 
+static void	*free_list(char **list)
+{
+	int	i;
+
+	i = 0;
+	while (list[i])
+		free(list[i++]);
+	free(list);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**list;
-	int	word_len;
+	int		word_len;
 	int		i;
 
 	list = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
@@ -53,11 +64,13 @@ char	**ft_split(char const *s, char c)
 	while (*s)
 	{
 		while (*s == c)
-		s++;
+			s++;
 		if (*s)
 		{
 			word_len = find_word_len(s, c);
 			list[i++] = ft_substr(s, 0, word_len);
+			if (!list[i - 1])
+				return (free_list(list));
 			s += word_len;
 		}
 	}
