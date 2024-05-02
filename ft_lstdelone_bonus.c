@@ -27,12 +27,7 @@ int main ()
  node1 =(t_list *)malloc * (sizeof(t_list));
  node2 = (t_list *)malloc * (sizeof(t_list));
 
-node1 -> content = node2;
+node1 -> content = "Node 1;
 node1 -> next = node2;
-
-
-
-    
-
-    
-}
+node2  -> next = NULL;
+   
