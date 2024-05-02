@@ -181,6 +181,12 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 ```
 ft_striteri function iterates over each character of the string s and applies the function f to each character, passing its index and a pointer to the character.
 
+## ft_lstmap.c
+```c
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+```
+This function takes a linked list and apply function "f" to the each element of the list and return a new list. If any error occurs during the memory allocation, it deletes the new list.
+
 # test
 ## test'
 ### test
