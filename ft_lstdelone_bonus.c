@@ -24,7 +24,13 @@ int main ()
     t_list *node1;
     t_list *node2;
     
- node1 =(t_list *)malloc * sizeof(t_list);
+ node1 =(t_list *)malloc * (sizeof(t_list));
+ node2 = (t_list *)malloc * (sizeof(t_list));
+
+node1 -> content = node2;
+node1 -> next = node2;
+
+
 
     
 
