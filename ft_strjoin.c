@@ -49,10 +49,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 /*
 #include <stdio.h>
 int main() {
-    char *strs[] = {"Apple", "Orange", "Plum", "Banana"};
-    char *sep = "|";
-    char *result = ft_strjoin(strs, sep);
+    char str1[] = "Apple ";
+    char str2[] = "Orange";
+    char *result = ft_strjoin(str1, str2);
     printf("%s\n", result);
     free(result);
     return 0;
-}*/
+}
+*/
