@@ -6,7 +6,7 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:02:28 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/25 14:47:45 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:52:04 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t nitems, size_t size)
 	char	*outcome;
 
 	totalsize = size * nitems;
-	if (nitems != 0 && size > SIZE_MAX / nitems)
+	if (nitems != 0 && size > UINT_MAX / nitems)
 	{
 		return (NULL);
 	}

@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 12:35:01 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/16 12:35:12 by dakcakoc         ###   ########.fr       */
+/*   Created: 2024/04/29 13:58:57 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/29 13:59:03 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (c >= 0 && c <= 127)
+	t_list	*tmp;
+
+	if (!lst || !del)
+		return ;
+	while (*lst)
 	{
-		return (1);
+		tmp = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = tmp;
 	}
-	else
-	{
-		return (0);
-	}
+	*lst = NULL;
 }
-/*
-#include <stdio.h>
-int main()
-{
-    char x[] = "abctdst";
-    int i = 0;
-    while (x[i] != '\0')
-    {
-        printf("%d", ft_isascii(x[i]));
-        i++;
-    }
-}
-*/

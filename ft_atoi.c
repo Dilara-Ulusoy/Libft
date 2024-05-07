@@ -6,9 +6,10 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:37:58 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/25 15:13:46 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:33:36 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libc.h"
 
 static int	ft_isspace(const char c)
 {
@@ -37,17 +38,17 @@ int	ft_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		result = result * 10 + (*str - '0');
+		if (sign == 1 && result < 0)
+			return (-1);
+		if (sign == -1 && result < 0)
+			return (0);
 		str++;
 	}
-	if (sign == 1 && result < 0)
-		return (-1);
-	else if (sign == -1 && result < 0)
-		return (0);
 	return ((int) result * sign);
 }
 /*
 int main() {
-    char str[] = "9223372036854775810";
+    char str[] = "-9223372036854775810";
     printf("%d\n", ft_atoi(str));
     printf("%d\n", atoi(str));
     return 0;

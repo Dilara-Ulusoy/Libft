@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
+/*   By: dakcakoc <dakcakoc@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 12:42:03 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/16 12:42:12 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:40:24 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (c >= 32 && c <= 126)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	new->next = *lst;
+	*lst = new;
 }
-/*
-#include <stdio.h>
-int main()
-{
-    char x[] = "abctdst ";
-    int i = 0;
-    while (x[i] != '\0')
-    {
-        printf("%d", ft_isprint(x[i]));
-        i++;
-    }
-}
-*/

@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 12:35:01 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/16 12:35:12 by dakcakoc         ###   ########.fr       */
+/*   Created: 2024/04/29 13:58:36 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/29 13:58:46 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_isascii(int c)
+t_list	*ft_lstnew(void *content)
 {
-	if (c >= 0 && c <= 127)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node ->content = content;
+	new_node ->next = NULL;
+	return (new_node);
 }
 /*
-#include <stdio.h>
 int main()
 {
-    char x[] = "abctdst";
-    int i = 0;
-    while (x[i] != '\0')
-    {
-        printf("%d", ft_isascii(x[i]));
-        i++;
-    }
-}
-*/
+    int data = 42;
+    t_list *node = ft_lstnew(&data);
+    printf("Content of the node: %d\n", *((int *)node->content));        
+   	free(node);
+    return (0);
+}*/

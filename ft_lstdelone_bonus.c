@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 12:35:01 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/16 12:35:12 by dakcakoc         ###   ########.fr       */
+/*   Created: 2024/04/29 13:58:13 by dakcakoc          #+#    #+#             */
+/*   Updated: 2024/04/29 13:58:22 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_isascii(int c)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (c >= 0 && c <= 127)
+	if (lst)
 	{
-		return (1);
-	}
-	else
-	{
-		return (0);
+		del(lst->content);
+		free(lst);
 	}
 }
-/*
-#include <stdio.h>
-int main()
-{
-    char x[] = "abctdst";
-    int i = 0;
-    while (x[i] != '\0')
-    {
-        printf("%d", ft_isascii(x[i]));
-        i++;
-    }
-}
-*/
