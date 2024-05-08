@@ -27,3 +27,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
+/*
+This function deletes and frees the memory of the linked list.
+First we assign the next pointer of the current node to the temporary node. 
+We dont want to lose the next node otherwise we cannot reach the next node.
+Then we delete the content of the current node.
+Then we free the memory of the current node.
+Then we assign the temporary node to the current node to reach the next node.
+*/
