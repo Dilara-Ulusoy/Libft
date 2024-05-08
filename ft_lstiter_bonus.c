@@ -22,3 +22,10 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst ->next;
 	}
 }
+/*
+This function iterates the linked list and applies the function f to the content of each node.
+First we check if the linked list and the function are valid.
+Then we iterate the linked list.
+Then we apply the function f to the content of the node.
+Then we assign the next node to the current node to reach the next node.
+*/
