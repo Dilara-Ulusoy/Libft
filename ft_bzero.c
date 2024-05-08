@@ -26,6 +26,10 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 /*
+This function writes first n bytes of the memory area pointed to by s with constant byte 0.
+Simply, we can say that this function erases the data in the memory area pointed to by s with the size of n bytes.
+*/
+/*
 #include <strings.h>
 #include <stdio.h>
 int main()
