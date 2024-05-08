@@ -34,6 +34,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ft_substr(s1, start, end - start));
 }
 /*
+This function trims the set characters from the 
+beginning and the end of the string.
+*/
+/*
  #include <string.h>
  #include <stdlib.h>
  #include <stdio.h>
