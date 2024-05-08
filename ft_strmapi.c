@@ -32,6 +32,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (result);
 }
 /*
+This function applies the function f to each character of 
+the string and creates a new string with 
+malloc resulting from the successive applications of f.
+*/
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
