@@ -79,6 +79,9 @@ char	**ft_split(char const *s, char c)
 	return (list);
 }
 /*
+This function splits the string s using the character c as a delimiter.
+*/
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
