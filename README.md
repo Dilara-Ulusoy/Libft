@@ -199,7 +199,58 @@ del: The function used to delete the content of an element if needed.
 
 **Passing by value:** When you pass a variable by value to a function, you are passing a copy of the variable's value. Any modifications made to the parameter inside the function will not affect the original variable.
 
+Passing by value:
+When passing by value, the function receives copies of the variables. Changes made to the copies inside the function don't affect the original variables.
+
+```c
+#include <stdio.h>
+
+void swap(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 5, y = 10;
+    printf("Before swap: x = %d, y = %d\n", x, y);
+    swap(x, y);
+    printf("After swap: x = %d, y = %d\n", x, y);
+    return 0;
+}
+```
+
+```c
+Output:
+Before swap: x = 5, y = 10
+After swap: x = 5, y = 10
+```
+
 **Passing by reference:** When you pass a variable by reference to a function, you are passing the address of the variable. This means that any modifications made to the parameter inside the function will affect the original variable.
+
+```c
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 5, y = 10;
+    printf("Before swap: x = %d, y = %d\n", x, y);
+    swap(&x, &y);
+    printf("After swap: x = %d, y = %d\n", x, y);
+    return 0;
+}
+```
+
+```c
+Output:
+Before swap: x = 5, y = 10
+After swap: x = 10, y = 5
+```
 
 # test
 ## test'
