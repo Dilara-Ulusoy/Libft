@@ -27,6 +27,12 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 	return (ft_strlen(src));
 }
 /*
+This function copies up to dstsize - 1 characters 
+from the string src to dest.
+It will then null-terminate the string.
+Return the total length of the string it tried to create.
+*/
+/*
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
