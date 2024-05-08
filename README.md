@@ -195,6 +195,12 @@ f: The function to apply to each element of the list.
 
 del: The function used to delete the content of an element if needed.
 
+# In C, when you pass a variable to a function, you can pass it either by value or by reference.
+
+**Passing by value:** When you pass a variable by value to a function, you are passing a copy of the variable's value. Any modifications made to the parameter inside the function will not affect the original variable.
+
+**Passing by reference:** When you pass a variable by reference to a function, you are passing the address of the variable. This means that any modifications made to the parameter inside the function will affect the original variable.
+
 # test
 ## test'
 ### test
