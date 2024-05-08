@@ -35,8 +35,7 @@ void	*ft_calloc(size_t nitems, size_t size)
 }
 /*
 This function allocates memory for an array of nitems elements based on 
-the size of each element (size) and
-initializes all the memory to zero-byte.
+the size of each element (size) and initializes all the memory to zero-byte.
 If the multiplication of nitems and size is bigger than the 
 maximum possible size for each item which memory can hold it (size_max / nitems),
 then it means that memory required to fit all the items into memory is 
