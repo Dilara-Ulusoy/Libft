@@ -31,6 +31,14 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 /*
+This function compares the first n bytes of the 
+memory areas pointed to by s1 and s2.
+Casting s1 and s2 to unsigned char * ensures type safety. 
+It tells the compiler that we're treating the memory as a sequence 
+of bytes and allows us to access the memory byte by byte 
+without violating const-correctness.
+*/
+/*
 #include <stdio.h>
 #include <string.h>
 
