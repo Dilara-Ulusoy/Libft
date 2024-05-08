@@ -28,6 +28,12 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (b);
 }
 /*
+This function writes len bytes of value c to the string b.
+I casted to pointer b to unsigned char pointer 
+because we are manipulating the data in the memory area 
+which is in byte format. But void pointer does not have a size.
+*/
+/*
 #include <stdio.h>
 int main()
 {
