@@ -17,8 +17,9 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 /*
-This function adds the new node to the beginning of the linked list.
-We assign the next pointer of the new node to the current node of the linked list.
+This function adds the new node to the 
+beginning of the linked list. We assign the next 
+pointer of the new node to the current node of the linked list.
 Then we assign the first node of the linked list to the new node.
 Then the new node becomes the first node of the linked list.
 */
