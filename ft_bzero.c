@@ -26,9 +26,12 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 /*
-This function writes first n bytes of the memory area pointed to by s with constant byte 0.
-Simply, we can say that this function erases the data in the memory area pointed to by s with the size of n bytes.
-I casted to pointer s to unsigned char pointer because the data in the memory area is in byte format. 
+This function writes first n bytes of the memory 
+area pointed to by s with constant byte 0.
+Simply, we can say that this function erases 
+the data in the memory area pointed to by s with the size of n bytes.
+I casted to pointer s to unsigned char pointer 
+because the data in the memory area is in byte format. 
 But void pointer does not have a size.
 */
 /*
