@@ -25,9 +25,12 @@ t_list	*ft_lstlast(t_list *lst)
 	return (last);
 }
 
-//This function returns the last element of the list.
-//It takes as a parameter the beginning of the list.
-//It returns the last element of the list.
+/*
+This function returns the last node of the linked list.
+First we assign the first node of the linked list to the last node.
+Then we iterate the linked list until the last node.
+Then we return the last node.
+*/
 /*
 #include <stdlib.h>
 #include <stdio.h>
