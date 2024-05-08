@@ -19,3 +19,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		free(lst);
 	}
 }
+/*
+This function deletes and frees the memory of the single node.
+First we delete the content of the node.
+Then we free the memory of the node.
+*/
