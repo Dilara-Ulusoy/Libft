@@ -23,7 +23,13 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
-
+/*
+This function counts the number of elements in a linked list.
+We initialize the count variable to 0.
+Then we iterate the linked list.
+In each iteration, we increment the count variable by 1.
+Finally, we return the count variable.
+*/
 /*
 int main()
 {
@@ -53,12 +59,3 @@ int main()
 
     return 0; 
 */
-
-/*
-Diyelim ki listeniz 3 eleman içeriyor: A -> B -> C -> NULL
-ft_lstsize fonksiyonu çağrıldığında, lst A'yı işaret eder ve count = 0.
-İlk döngüde, lst B'ye geçer ve count 1 olur.
-İkinci döngüde, lst C'ye geçer ve count 2 olur.
-Üçüncü döngüde, lst NULL olur ve count 3 olur. Döngü sona erer.
-Fonksiyon 3 değerini döndürür, çünkü listede 3 eleman vardir
- */
