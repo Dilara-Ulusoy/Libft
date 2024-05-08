@@ -28,3 +28,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	last -> next = new;
 }
+/*
+This function adds the new node to the end of the linked list.
+If the linked list is empty, then the new node is the first node of the linked list.
+If the linked list is not empty, then the new node is added to the end of the linked list.
+*/
