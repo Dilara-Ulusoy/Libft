@@ -23,6 +23,13 @@ t_list	*ft_lstnew(void *content)
 	return (new_node);
 }
 /*
+This function creates a new node.
+First we allocate memory for the new node.
+Then we assign the content of the new node.
+Then we assign the next node to NULL.
+Then we return the new node.
+*/
+/*
 int main()
 {
     int data = 42;
