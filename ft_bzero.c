@@ -31,7 +31,6 @@ Simply, we can say that this function erases the data in the memory area pointed
 I casted to pointer s to unsigned char pointer because the data in the memory area is in byte format. 
 But void pointer does not have a size.
 */
-
 /*
 #include <strings.h>
 #include <stdio.h>
