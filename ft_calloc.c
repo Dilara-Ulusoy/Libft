@@ -34,15 +34,16 @@ void	*ft_calloc(size_t nitems, size_t size)
 	return ((void *)outcome);
 }
 /*
+This function allocates memory for an array of nitems elements based on the size of each element (size) and 
+initializes all the memory to zero-byte.
+If the multiplication of nitems and size is bigger than the maximum possible size for each item which memory can hold it (size_max / nitems),
+then it means that memory required to fit all the items into memory is too big and the program runs of of memory.
+*/
+/*
  int main()
  {
     char first[] = "Hello";
     char *result;
  result = ft_calloc(sizeof(char),5);
  }
- 
- //If size of each item (size) is bigger than the max
- possible size for each item which memory can hold it (size_max / nitems),
- then it means that memory required to fit all the items into memory is
- too big and the program runs of of memory
  */
