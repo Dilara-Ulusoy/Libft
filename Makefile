@@ -22,42 +22,35 @@ BONUS =	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c ft_ls
 	   
 HEADER = libft.h
 
-#The ar command is used to create, modify, and extract from archives
 AR = ar rcs
 
 CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
-# This command will give you all the warnings and errors
-CFLAGS = -Wall -Wextra -Werror 
-
-# This will replace all the .c files with .o files
 OBJS = ${SRCS:.c=.o}
 
-# This will replace all the .c files with .o files for bonus
-BONUS_OBJS = $(BONUS:.c=.o) 
+BONUS_OBJS = $(BONUS:.c=.o)
 
-# This target will compile the library and create the .a file with the name of the library
 all: $(NAME)
 
-$(NAME): ${OBJS} ${HEADER}
+$(NAME): ${OBJS}
 	$(AR) -r $@ $?
 
-# This will compile the .c files to .o files
 %.o: %.c
 	$(CC) -c $(CFLAGS) $< -o $@
 
-bonus:	.bonus # This will compile the bonus files 
+bonus: .bonus
 
-.bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) -r $(NAME) $(OBJS) $(BONUS_OBJS)
-	touch .bonus 
-# This rule cleans all the .o files and the bonus files
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)
 	rm -f .bonus
 
+.bonus:	$(OBJS) $(BONUS_OBJS)
+	$(AR) -r $(NAME) $(OBJS) $(BONUS_OBJS)
+	touch .bonus
+
 fclean: clean
-	rm -f $(NAME) 
+	rm -f $(NAME)
 
 re: fclean all bonus
 
