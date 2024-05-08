@@ -22,6 +22,12 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 }
 /*
+Simply this function applies the function f to 
+each character of the string passed as argument, 
+and passing its index as first argument.
+As a result, it modifies the string in place.
+*/
+/*
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
