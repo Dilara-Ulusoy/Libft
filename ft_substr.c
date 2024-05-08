@@ -36,6 +36,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (subs);
 }
 /*
+This function finds the substring of a string by 
+taking the starting index and the length of the substring.
+Then allocates memory for the substring and returns it.
+*/
+/*
 #include <stdlib.h>
 #include <stdio.h>
 int main()
