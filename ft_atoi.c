@@ -47,6 +47,13 @@ int	ft_atoi(const char *str)
 	return ((int) result * sign);
 }
 /*
+This function converts the initial portion of the string pointed to by str to int representation.
+If the result exceeds the range of the int type, the function returns -1 or 0 depending on the sign.
+Example number for out of range: 9223372036854775807 (max int value + 1), in this case the function returns -1.
+Example number for out of range: -9223372036854775808 (min int value - 1), in this case the function returns 0.
+*/
+
+/*
 int main() {
     char str[] = "-9223372036854775810";
     printf("%d\n", ft_atoi(str));
