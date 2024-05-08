@@ -38,3 +38,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_lst);
 }
+/*
+This function creates a new linked list by applying the function f to the content of each node.
+If the allocation fails in the middle of the process or the function f returns NULL,
+then the function deletes and frees the memory of the new linked list.
+*/
