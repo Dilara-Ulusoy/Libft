@@ -64,6 +64,10 @@ char	*ft_itoa(int n)
 	return (result);
 }
 /*
+This function takes an integer as a parameter and
+returns a string representation of the integer.
+*/
+/*
 int main()
 {
     int num = 12345;
