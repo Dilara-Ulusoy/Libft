@@ -6,10 +6,9 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:37:58 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/05/07 12:33:36 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:09:40 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libc.h"
 
 static int	ft_isspace(const char c)
 {
@@ -55,12 +54,9 @@ Example number for out of range: 9223372036854775807
 (max int value + 1), in this case the function returns -1.
 Example number for out of range: -9223372036854775808 
 (min int value - 1), in this case the function returns 0.
-*/
-/*
 int main() {
     char str[] = "-9223372036854775810";
     printf("%d\n", ft_atoi(str));
     printf("%d\n", atoi(str));
     return 0;
-}
-*/
+}*/

@@ -6,7 +6,7 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 13:59:24 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/29 14:00:38 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:14:20 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,6 +15,8 @@ int	ft_lstsize(t_list *lst)
 {
 	int	count;
 
+	if (!lst)
+		return (0);
 	count = 0;
 	while (lst)
 	{

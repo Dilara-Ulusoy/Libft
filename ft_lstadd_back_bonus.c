@@ -6,7 +6,7 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 13:37:53 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/29 13:39:20 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:44:04 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
+	if (!new || !lst)
+		return ;
 	if (*lst == NULL)
 	{
 		*lst = new;

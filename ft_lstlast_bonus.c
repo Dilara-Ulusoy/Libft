@@ -6,7 +6,7 @@
 /*   By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 14:01:25 by dakcakoc          #+#    #+#             */
-/*   Updated: 2024/04/29 14:06:07 by dakcakoc         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:44:59 by dakcakoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*last;
 
+	if (!lst)
+		return (NULL);
 	last = lst;
 	if (last)
 	{
@@ -24,7 +26,6 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (last);
 }
-
 /*
 This function returns the last node of the linked list.
 First we assign the first node of the linked list to the last node.

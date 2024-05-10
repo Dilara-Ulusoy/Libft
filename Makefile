@@ -6,7 +6,7 @@
 #    By: dakcakoc <dakcakoce@student.hive.fi>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 10:32:48 by dakcakoc          #+#    #+#              #
-#    Updated: 2024/04/24 15:45:39 by dakcakoc         ###   ########.fr        #
+#    Updated: 2024/05/10 13:19:06 by dakcakoc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ all: $(NAME)
 
 # This is the target to create the static library archive ${NAME} from the object files ${OBJS}
 $(NAME): ${OBJS}
-	$(AR) -r $@ $? 
+	$(AR) $@ $? 
 
 #This is the target to compile the object files. The $< is the first dependency. The -c flag is to compile the file without linking  -o is to specify the output file name and $@ is the target name
 # This rule says that for each file in the list of object files, compile it using the compiler and flags
@@ -61,7 +61,7 @@ clean:
 #This .bonus target will create the static library archive from the object files and the bonus object files. It will then create a file called .bonus to prevent the bonus from being compiled again.
 #Touch .bonus is used to create the file .bonus if it does not exist. If it does exist, it will update the timestamp of the file to the current time.
 .bonus:	$(OBJS) $(BONUS_OBJS)
-	$(AR) -r $(NAME) $(OBJS) $(BONUS_OBJS)
+	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
 	touch .bonus
 
 # Fclean will remove the static library archive and the object files
